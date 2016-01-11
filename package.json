@@ -1,0 +1,20 @@
+{
+  "name": "mongoosy",
+  "version": "0.0.1",
+  "description": "The EasyPal project",
+  "author": "Micky Loranger <me@mickyloranger.com>",
+  "homepage": "https://bitbucket.org/mickyloranger/mongoosy#readme",
+  "main": "mongoosy.js",
+  "scripts": {
+    "test": "mocha tests --require blanket --reporter html-cov > coverage.html",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://mickyloranger@bitbucket.org/mickyloranger/mongoosy.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
