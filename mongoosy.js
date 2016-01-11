@@ -17,25 +17,60 @@ var objToString = function(obj, ndeep) {
     }
 };
 
-var hasValidTypeProVal = function (typeVal) {
-    return _.contains(["array", "boolean", "integer", "number", "null", "object", "string"], typeVal);
-}
-
-var mapObject = function(object){
-
+var hasValidTypeVal = function (typeVal) {
+    return _.contains(["array", "boolean", "integer", "number", "object", "string"], typeVal);
 };
 
-var mapArray = function(array){
-
+var mapPrimitiveType = function (primitiveType) {
+    if(primitiveType.indexOf('integer') === 0) {
+        primitiveType = "number"
+    }
+    return eval(primitiveType.charAt(0).toUpperCase() + primitiveType.substr(1));
 };
 
-var mapPrimitivesType = function(primitive){
-
+var mapJsonTypesToMongooseTypes = function(v, strType) {
+    var tmp = null;
+    var type = strType || v['type'];
+    switch(type) {
+        case 'array':
+            tmp = [];
+            if(v['items']['$ref'] != null) {
+                tmp.push({
+                    type: Schema.ObjectId,
+                    ref: v['items']['$ref']
+                });
+            } else {
+                var originalType = v['items']['type'];
+                v['items']['type'] = mapPrimitiveType(v['items']['type']);
+                tmp.push(mapJsonTypesToMongooseTypes(v['items'], originalType));
+            }
+            break;
+        case 'object':
+            tmp = {};
+            var props = v['properties'];
+            _.each(props, function(data, k) {
+                if(data['$ref'] != null) {
+                    tmp[k] = {
+                        type: Schema.ObjectId,
+                        ref: data['$ref']
+                    };
+                } else {
+                    tmp[k] = mapPrimitiveType(data['type'])
+                }
+            });
+            break;
+        default:
+            tmp = v;
+            tmp['type'] = mapPrimitiveType(type);
+            break;
+    }
+    return tmp
 };
 
-var mapJsonTypesToMongooseTypes = function(data){
+var jsonSchemaToMongooseSchema = function(data){
 
     var tmp = null;
+    var mongooseSchema = {};
 
     _.each(data, function (value, key) {
 
@@ -45,30 +80,13 @@ var mapJsonTypesToMongooseTypes = function(data){
                 ref: value['$ref']
             }
         }else {
-
-        }
-        var typeVal = value["type"];
-
-        if(!hasValidTypeProVal(typeVal)){
-            throw "the value of a 'type' property is not valid.\nvalue:"+typeVal;
+            tmp = mapJsonTypesToMongooseTypes(value);
         }
 
-        switch (type){
-            case "number":
-                break;
-            case "integer":
-                break;
-            case "boolean":
-                break;
-            case "string":
-                break;
-            case "array":
-                break;
-            case "object":
-                break;
-        }
+        mongooseSchema[key] = tmp;
+
     });
-
+    return mongooseSchema;
 };
 
 var validateSchema = function (schemaObject) {
@@ -158,17 +176,16 @@ var validateSchema = function (schemaObject) {
     }
 };
 
-var fromJSON = function(filePath){
+var fromJSON = function(schemaObject){
 
-    var schemaString = fs.readFileSync(filePath, "utf8");
+   var res = jsonSchemaToMongooseSchema(schemaObject["properties"]);
 
-    var schemaObject = JSON.parse(schemaString);
+    return res;
 
-    var converted = mapJsonTypesToMongooseTypes(schemaObject["properties"]);
-
-    return converted;
-}
+};
 
 var mongoosy = {};
+
 mongoosy.fromJSON = fromJSON;
+
 module.exports = mongoosy;
