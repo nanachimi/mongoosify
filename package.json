@@ -1,14 +1,26 @@
 {
-  "name": "mongoosy",
+  "name": "mongoosify",
   "version": "0.0.1",
-  "description": "The EasyPal project",
-  "author": "Micky Loranger <me@mickyloranger.com>",
-  "homepage": "https://bitbucket.org/mickyloranger/mongoosy#readme",
-  "main": "mongoosy.js",
-  "scripts": {
-    "test": "mocha tests --require blanket --reporter html-cov > coverage.html",
-    "start": "node server.js"
+  "description": "A library to convert a JSON Schema into a Mongoose Schema",
+  "author": {
+    "name": "Micky Loranger",
+    "email": "me@mickyloranger.com",
+    "url": "http://www.mickyloranger.com/me"
   },
+  "homepage": "https://bitbucket.org/mickyloranger/mongoosy#readme",
+  "bugs": {
+    "url": "https://bitbucket.org/mickyloranger/mongoosy/issues",
+    "email": "moogoosify@mickyloranger.com"
+  },
+  "keywords": [
+    "convert",
+    "parse",
+    "map",
+    "json",
+    "mongo",
+    "mongoose",
+    "schema"
+  ],
   "repository": {
     "type": "git",
     "url": "https://mickyloranger@bitbucket.org/mickyloranger/mongoosy.git"
@@ -16,5 +28,8 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "mongoose": "^4.3.5"
   }
 }
