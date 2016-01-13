@@ -56,14 +56,14 @@ This file following data is saves as ```jschema.json```
 
 ```
 
-The following code illustrate how to parse a json schema from the ```jschema.json``` file into a mongoose schema (mongoosify ;))
+The following code show how to parse a json schema from the ```jschema.json``` file into a mongoose schema (mongoosify ;))
 
 ```
-var mongoosy = require('mongoosify');
+var mongoosify = require('mongoosify');
 var mongoose = require("mongoose");
 var myJsonSchemaFile = require("./jschema.json");
 
-var mySchema= mongoosy(myJsonSchemaFile);
+var mySchema= mongoosify(myJsonSchemaFile);
 
 var Schema = mongoose.Schema;
 var mongooseSchema = new Schema(mySchema);
