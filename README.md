@@ -1,4 +1,4 @@
-# Mongoosy #
+# Mongoosify #
 
 Mongoosify is a Javascript library to parse a [JSON Schema](http://www.json-schema.org) into a [Mongoose Schema](http://spacetelescope.github.io/understanding-json-schema/reference/index.html).
 
@@ -83,7 +83,7 @@ Unit tests for the actual code
 
 ### Planned features ###
 
-1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ```$ref```, ```$schema``` and ```id```. 
+1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ``` $ref ```, ``` $schema``` and ```id```. 
 2. Evaluation of the following constraints:
     - schema keywords:
         * ```additionalProperties```
@@ -101,4 +101,4 @@ Unit tests for the actual code
 
 ### You can contribute! ###
 
-I'm looking for contributors. Everyone is welcome!
+Want to contributor? Just need a pull request! I look forward to have as contributor on board!

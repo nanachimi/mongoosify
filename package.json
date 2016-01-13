@@ -1,7 +1,7 @@
 {
   "name": "mongoosify",
-  "version": "0.0.2",
-  "description": "A library to convert a JSON Schema into a Mongoose Schema",
+  "version": "0.0.3",
+  "description": "A JavaScript library to convert a JSON Schema into a Mongoose Schema",
   "author": {
     "name": "Micky Loranger",
     "email": "me@mickyloranger.com",
