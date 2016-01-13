@@ -1,29 +1,27 @@
 {
   "name": "mongoosify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A library to convert a JSON Schema into a Mongoose Schema",
   "author": {
     "name": "Micky Loranger",
     "email": "me@mickyloranger.com",
     "url": "http://www.mickyloranger.com/me"
   },
-  "homepage": "https://bitbucket.org/mickyloranger/mongoosy#readme",
+  "homepage": "https://github.com/mickyloranger/mongoosify",
   "bugs": {
-    "url": "https://bitbucket.org/mickyloranger/mongoosy/issues",
+    "url": "https://github.com/mickyloranger/mongoosify/issues",
     "email": "moogoosify@mickyloranger.com"
   },
   "keywords": [
-    "convert",
-    "parse",
-    "map",
+    "converter",
+    "parser",
     "json",
-    "mongo",
-    "mongoose",
-    "schema"
+    "schema",
+    "mongoose"
   ],
   "repository": {
     "type": "git",
-    "url": "https://mickyloranger@bitbucket.org/mickyloranger/mongoosy.git"
+    "url": "https://github.com/mickyloranger/mongoosify.git"
   },
   "license": "MIT",
   "dependencies": {

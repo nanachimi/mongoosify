@@ -83,7 +83,7 @@ Unit tests for the actual code
 
 ### Planned features ###
 
-1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ``$ref```, ```$schema``` and ```id```. 
+1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ```$ref```, ```$schema``` and ```id```. 
 2. Evaluation of the following constraints:
     - schema keywords:
         * ```additionalProperties```
