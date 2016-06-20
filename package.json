@@ -1,16 +1,16 @@
 {
   "name": "mongoosify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A JavaScript library to convert a JSON Schema into a Mongoose Schema",
   "author": {
-    "name": "Micky Loranger",
+    "name": "Achille Nana Chimi",
     "email": "me@mickyloranger.com",
-    "url": "http://www.mickyloranger.com/me"
+    "url": "http://www.mickyloranger.com"
   },
   "homepage": "https://github.com/mickyloranger/mongoosify",
   "bugs": {
     "url": "https://github.com/mickyloranger/mongoosify/issues",
-    "email": "moogoosify@mickyloranger.com"
+    "email": "me@mickyloranger.com"
   },
   "keywords": [
     "converter",
@@ -19,6 +19,9 @@
     "schema",
     "mongoose"
   ],
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mickyloranger/mongoosify.git"
@@ -28,6 +31,8 @@
     "lodash": "^3.10.1"
   },
   "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
     "mongoose": "^4.3.5"
   }
 }
