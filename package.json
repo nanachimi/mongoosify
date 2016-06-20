@@ -5,7 +5,7 @@
   "author": {
     "name": "Achille Nana Chimi",
     "email": "me@mickyloranger.com",
-    "url": "http://www.mickyloranger.com"
+    "url": "http://mickyloranger.com"
   },
   "homepage": "https://github.com/mickyloranger/mongoosify",
   "bugs": {
@@ -20,7 +20,7 @@
     "mongoose"
   ],
   "scripts": {
-    "test": "mocha"
+    //"test": "mocha"
   },
   "repository": {
     "type": "git",

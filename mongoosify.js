@@ -16,13 +16,13 @@ var validateSchema = function (schemaObject) {
 
     /**
      *
-     * @param schemaPropVal a value of a $schema property
+     * @param idVal a value of a $schema property
      * @returns true if a value of a $schema property is valid, else false
      */
     var hasValidSchemaVal = function (idVal) {
         return true;
         //TODO
-    }
+    };
 
 
     var hasValidTypeVal = function (typeVal) {
@@ -31,7 +31,7 @@ var validateSchema = function (schemaObject) {
 
     var hasValidPropertiesVal = function(propertiesVal){
         return !_.isEmpty(propertiesVal);
-    }
+    };
 
     var schema = "$schema";
 
@@ -90,12 +90,13 @@ var validateSchema = function (schemaObject) {
 };
 
 var mapPrimitiveTypes = function (primitiveType) {
-
-    if(primitiveType.indexOf('integer') === 0) {
-        primitiveType = "number";
+    var regexp = "/^(string|integer|array|object|boolean|number)$/";
+    if (primitiveType.match(regexp)) {
+        if (primitiveType.indexOf('integer') === 0) {
+            primitiveType = "number";
+        }
+        return eval(primitiveType.charAt(0).toUpperCase() + primitiveType.substr(1));
     }
-
-    return eval(primitiveType.charAt(0).toUpperCase() + primitiveType.substr(1));;
 };
 
 var mapComplexTypes = function(value, strType) {
