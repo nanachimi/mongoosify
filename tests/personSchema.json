@@ -1,0 +1,24 @@
+{
+  "type":"object",
+  "properties":{
+    "address":{
+      "type":"object",
+      "properties":{
+        "street":{"type":"string"},
+        "house":{"type":"string"},
+        "city":{"type":"string"}
+      }
+    },
+    "firstName":{"type":"string"},
+    "lastName":{"type":"string"},
+    "title":{
+      "type":"string",
+      "enum":["Dr","Prof.","Ph.D."]
+    },
+    "email":{
+      "type":"array",
+      "items":{"type":"string"}
+    },
+    "age":{"type": "integer"}
+  }
+}

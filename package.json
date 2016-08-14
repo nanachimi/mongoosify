@@ -1,38 +1,51 @@
 {
   "name": "mongoosify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A JavaScript library to convert a JSON Schema into a Mongoose Schema",
   "author": {
     "name": "Achille Nana Chimi",
-    "email": "me@mickyloranger.com",
-    "url": "http://mickyloranger.com"
+    "email": "me@nanachimi.com",
+    "url": "https://nanachimi.com"
   },
-  "homepage": "https://github.com/mickyloranger/mongoosify",
+  "homepage": "https://github.com/nanachimi/mongoosify",
   "bugs": {
-    "url": "https://github.com/mickyloranger/mongoosify/issues",
-    "email": "me@mickyloranger.com"
+    "url": "https://github.com/nanachimi/mongoosify/issues",
+    "email": "mongoosify@nanachimi.com"
   },
   "keywords": [
     "converter",
     "parser",
     "json",
     "schema",
-    "mongoose"
+    "mongoose",
+    "mongo",
+    "mongodb"
   ],
   "scripts": {
-    //"test": "mocha"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mickyloranger/mongoosify.git"
+    "url": "https://github.com/nanachimi/mongoosify.git"
   },
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "^4.15.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4",
-    "mongoose": "^4.3.5"
+    "blanket": "^1.2.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "config": {
+    "blanket": {
+      "pattern": [
+        "mongoosify"
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "tests"
+      ]
+    }
   }
 }

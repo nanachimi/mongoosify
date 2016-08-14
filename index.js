@@ -1,3 +1,3 @@
 'use strict';
-var mongoosy = require('./mongoosify');
-module.exports = mongoosy;
+var mongoosify = require('./mongoosify');
+module.exports = mongoosify;

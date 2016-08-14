@@ -8,58 +8,39 @@ npm install mongoosify --save
 
 ### Usage ###
 
-This file following data is saves as ```jschema.json```
+Let suppose the JSON object is saved as ```jschema.json```
 
-```
+```json
 {
   "type":"object",
   "properties":{
     "address":{
       "type":"object",
       "properties":{
-        "street":{
-          "type":"string"
-        },
-        "house":{
-          "type":"string"
-        },
-        "city":{
-          "type":"string"
-        }
+        "street":{"type":"string"},
+        "house":{"type":"string"},
+        "city":{"type":"string"}
       }
     },
-    "firstName":{
-      "type":"string"
-    },
-    "lastName":{
-      "type":"string"
-    },
+    "firstName":{"type":"string"},
+    "lastName":{"type":"string"},
     "title":{
       "type":"string",
-      "enum":[
-        "Dr",
-        "Prof.",
-        "Ph.D."
-      ]
+      "enum":["Dr","Prof.","Ph.D."]
     },
     "email":{
       "type":"array",
-      "items":{
-        "type":"string"
-      }
+      "items":{"type":"string"}
     },
-    "age":{
-      "type": "integer"
-    }
+    "age":{"type": "integer"}
   }
 }
-
 ```
 
-The following code show how to parse a json schema from the ```jschema.json``` file into a mongoose schema (mongoosify ;))
+The following code demonstrate how to parse a JSON schema from the ```jschema.json``` file into a mongoose schema (I called it mongoosify :D)
 
-```
-var mongoosify = require('mongoosify');
+```Javascript
+var mongoosify = require("mongoosify");
 var mongoose = require("mongoose");
 var myJsonSchemaFile = require("./jschema.json");
 
@@ -83,7 +64,7 @@ Unit tests for the actual code
 
 ### Planned features ###
 
-1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ``` $ref ```, ``` $schema``` and ```id```. 
+1. Enable  [reusability](http://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse) with keywords ``` $ref ```, ``` $schema``` and ```id```.
 2. Evaluation of the following constraints:
     - schema keywords:
         * ```additionalProperties```
@@ -93,8 +74,8 @@ Unit tests for the actual code
         * ```maxItem```
         * ```uniqueItems```
     - numeric types keywords:
-        * ```minimum``` 
-        * ```maximum``` 
+        * ```minimum```
+        * ```maximum```
         * ```multipleOf```
     - string keyword:
         * ```format```
