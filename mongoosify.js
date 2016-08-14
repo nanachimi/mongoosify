@@ -9,7 +9,6 @@ var fs = require("fs");
 * @returns {boolean}
 */
 var hasSchemaKey = function (schemaObject, key) {
-  var result = _.has(schemaObject, key);
   return _.has(schemaObject, key);
 };
 
@@ -81,13 +80,11 @@ var validateSchema = function (schemaObject) {
 
   if(hasSchemaKey(schemaObject, required)) {
     var requiredVal = _.get(schemaObject, required);
-  }else{
-
   }
+
 };
 
 var mapPrimitiveTypes = function (primitiveType) {
-  var regexp = "/^string|integer|array|object|boolean|number$/g";
   if (primitiveType.match(/^string|integer|array|object|boolean|number$/g)) {
     if (primitiveType.indexOf('integer') === 0) {
       primitiveType = "number";

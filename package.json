@@ -22,7 +22,7 @@
     "mongodb"
   ],
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha tests && istanbul cover mongoosify.js"
   },
   "repository": {
     "type": "git",
@@ -33,19 +33,8 @@
     "lodash": "^4.15.0"
   },
   "devDependencies": {
-    "blanket": "^1.2.3",
-    "chai": "^3.5.0",
-    "mocha": "^3.0.2"
-  },
-  "config": {
-    "blanket": {
-      "pattern": [
-        "mongoosify"
-      ],
-      "data-cover-never": [
-        "node_modules",
-        "tests"
-      ]
-    }
+    "chai": "^1.9.2",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.0.1"
   }
 }

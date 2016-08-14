@@ -52,6 +52,10 @@ var mongooseSchema = new Schema(mySchema);
 //now you are ready to go...
 ```
 
+### How to run tests ###
+```Shell
+$ npm test
+```
 ### Important notes ###
 
 Mongoosify will always try to cast type implicitly if a schema and the data don't have a same type. If a casting is not possible (e.g. "Hallo" can not be cast into a number but "10" can be) and CastError will be throw by Mongoose.
