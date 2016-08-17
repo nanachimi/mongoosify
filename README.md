@@ -1,13 +1,12 @@
-# Mongoosify #
+[![bitHound Overall Score](https://www.bithound.io/github/nanachimi/mongoosify/badges/score.svg)](https://www.bithound.io/github/nanachimi/mongoosify) [![bitHound Dependencies](https://www.bithound.io/github/nanachimi/mongoosify/badges/dependencies.svg)](https://www.bithound.io/github/nanachimi/mongoosify/master/dependencies/npm)
 
+# Mongoosify #
 Mongoosify is a Javascript library to parse a [JSON Schema](http://www.json-schema.org) into a [Mongoose Schema](http://spacetelescope.github.io/understanding-json-schema/reference/index.html).
 
 ### Installation ###
-
 npm install mongoosify --save
 
 ### Usage ###
-
 Let suppose the JSON object is saved as ```jschema.json```
 
 ```json
