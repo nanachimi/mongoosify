@@ -1,4 +1,4 @@
-[![bitHound Overall Score](https://www.bithound.io/github/nanachimi/mongoosify/badges/score.svg)](https://www.bithound.io/github/nanachimi/mongoosify) [![bitHound Dependencies](https://www.bithound.io/github/nanachimi/mongoosify/badges/dependencies.svg)](https://www.bithound.io/github/nanachimi/mongoosify/master/dependencies/npm)
+[![Known Vulnerabilities](https://snyk.io/test/npm/mongoosify/badge.svg)](https://snyk.io/test/npm/mongoosify) [![bitHound Overall Score](https://www.bithound.io/github/nanachimi/mongoosify/badges/score.svg)](https://www.bithound.io/github/nanachimi/mongoosify) [![bitHound Dependencies](https://www.bithound.io/github/nanachimi/mongoosify/badges/dependencies.svg)](https://www.bithound.io/github/nanachimi/mongoosify/master/dependencies/npm) 
 
 # Mongoosify #
 Mongoosify is a Javascript library to parse a [JSON Schema](http://www.json-schema.org) into a [Mongoose Schema](http://spacetelescope.github.io/understanding-json-schema/reference/index.html).
