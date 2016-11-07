@@ -4,7 +4,7 @@
 Mongoosify is a Javascript library to parse a [JSON Schema](http://www.json-schema.org) into a [Mongoose Schema](http://spacetelescope.github.io/understanding-json-schema/reference/index.html).
 
 ### Installation ###
-npm install mongoosify --save
+`npm install mongoosify --save`
 
 ### Usage ###
 Let suppose the JSON object is saved as ```jschema.json```
