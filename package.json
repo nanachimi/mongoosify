@@ -22,7 +22,9 @@
     "mongodb"
   ],
   "scripts": {
-    "test": "mocha tests && istanbul cover mongoosify.js"
+    "test": "mocha tests && istanbul cover mongoosify.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,11 +32,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.15.0"
+    "lodash": "^4.15.0",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "chai": "^1.9.2",
     "istanbul": "^0.4.4",
     "mocha": "^2.0.1"
-  }
+  },
+  "snyk": true
 }
